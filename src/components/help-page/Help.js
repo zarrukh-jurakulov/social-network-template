@@ -1,8 +1,13 @@
 import React from 'react'
 import './help.css'
 
+<<<<<<< HEAD
 export const Help = ({
     return(
+=======
+const Help = () => {
+  return(
+>>>>>>> 556b4de04720b2fc04638a6847b6770195b2c248
         <div className = 'helpPage' >
             <div className="helpPageContext">
                 <h1>Heading</h1>
@@ -36,7 +41,9 @@ export const Help = ({
                     Maxime excepturi ipsa soluta cumque!</h3>
             </div>
         </div >
-    )
+    )  
 }
+    
+
 
 
