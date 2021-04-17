@@ -1,7 +1,7 @@
 import React from 'react'
 import './help.css'
 
-const Help = ({
+export const Help = ({
     return(
         <div className = 'helpPage' >
             <div className="helpPageContext">
@@ -39,4 +39,4 @@ const Help = ({
     )
 }
 
-export default Help
+

@@ -40,4 +40,4 @@ const Info = () => {
     )
 }
 
-export default Info
+ default Info
