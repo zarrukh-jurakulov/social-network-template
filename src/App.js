@@ -3,7 +3,7 @@ import './App.css';
 import Sidebar from './components/sidebar/Sidebar'
 import Main from './components/main-page/Main'
 import Info from './components/info-page/Info'
-import { Help } from './components/help-page/Help'
+import  Help  from './components/help-page/Help'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 function App(props) {
   const [authed, setAuthed] = React.useState(false)

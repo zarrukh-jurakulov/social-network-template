@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 const Modal = ({ visible, toggle }) =>
   visible
-  ?? ReactDOM.createPortal(
+  ? ReactDOM.createPortal(
 
     <div className="modal-overlay">
       <div className="modal">
@@ -23,6 +23,6 @@ const Modal = ({ visible, toggle }) =>
     </div>,
     document.body
   )
-    :: null;
+    : null;
 
 export default Modal;
