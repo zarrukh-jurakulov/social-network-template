@@ -1,9 +1,9 @@
 import React from 'react'
 import './help.css'
 
-const Help = () => {
-    return (
-        <div className='helpPage'>
+const Help = ({
+    return(
+        <div className = 'helpPage' >
             <div className="helpPageContext">
                 <h1>Heading</h1>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -35,7 +35,7 @@ const Help = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel fugit expedita totam numquam accusantium necessitatibus sed voluptates, eaque laboriosam modi obcaecati at soluta, ab eius.
                     Maxime excepturi ipsa soluta cumque!</h3>
             </div>
-        </div>
+        </div >
     )
 }
 
