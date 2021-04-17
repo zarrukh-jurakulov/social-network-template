@@ -3,18 +3,52 @@
     height: 100vh;
     background-color: blueviolet;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
-.sidearContext li {
+
+
+.pagesContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 10px;
+  width: 90px;
+  height: 50px;
+  
+}
+
+.pagesContainer a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+ 
+}
+
+.sidebarContext  {
     list-style-type: none;
-    margin-right: 50px;
+    
+    
 }
 
-.sidebar img {
+.chatLogo {
+  width: 100px;
+  height: 100px;
+}
+
+.pagesLogo {
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    
+}
+
+.ctrlPlusenter{
+  font-size: 30px;
+  color: white;
 }
 
 .modal-pop {
