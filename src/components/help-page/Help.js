@@ -24,7 +24,7 @@ const Help = () => {
                 Quidem quos voluptas quo nostrum harum expedita magni totam ex.
                 Harum impedit quaerat vero eum est numquam cum a in sunt molestiae. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Quas sint facere quasi praesentium suscipit pariatur cupiditate blanditiis dicta modi dolore eligendi voluptas asperiores quibusdam quidem cumque sed,
-                 numquam temporibus laboriosam!2</h3>
+                 numquam temporibus laboriosam!</h3>
 
                 <h1>Heading</h1>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.

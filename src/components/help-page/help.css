@@ -1,5 +1,17 @@
 .helpPage {
     width: 80%;
     height: 100vh;
-    background-color: coral;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.helpPageContext{
+    width: 90%;
+    height: 95vh;
+}
+
+.helpPageContext h1 {
+    margin: 0;
 }

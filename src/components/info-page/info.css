@@ -1,5 +1,17 @@
 .infoPage {
     width: 80%;
     height: 100vh;
-    background-color: chartreuse;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoPageContext{
+    width: 90%;
+    height: 95vh;
+}
+
+.infoPageContext h1 {
+    margin: 0;
 }
