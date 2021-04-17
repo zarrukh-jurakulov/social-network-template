@@ -1,8 +1,8 @@
 import React from 'react'
 import './help.css'
 
-const Help = ({
-    return(
+const Help = () => {
+  return(
         <div className = 'helpPage' >
             <div className="helpPageContext">
                 <h1>Heading</h1>
@@ -36,7 +36,9 @@ const Help = ({
                     Maxime excepturi ipsa soluta cumque!</h3>
             </div>
         </div >
-    )
+    )  
 }
+    
+
 
 export default Help
