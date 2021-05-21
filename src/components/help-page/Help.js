@@ -15,10 +15,7 @@ const Help = () => {
                 Corrupti nemo quas perferendis, alias commodi beatae eos at mollitia nihil, vero laboriosam veritatis magnam?
                 Fuga pariatur impedit consequatur deserunt labore maxime! Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quia voluptate odit facere vel non voluptatem placeat necessitatibus rem. Necessitatibus et quidem veritatis enim amet excepturi officiis.
-                    Hic velit dolor omnis.</h3>
-
-                <h1>Heading</h1>
-                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic velit dolor omnis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Dignissimos id ipsam rerum ullam debitis ratione est facilis tempore.
                 Autem voluptates ea, non impedit illo excepturi est possimus perferendis.
                 Obcaecati, repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -29,6 +26,8 @@ const Help = () => {
                 Quas sint facere quasi praesentium suscipit pariatur cupiditate blanditiis dicta modi dolore eligendi voluptas asperiores quibusdam quidem cumque sed,
                  numquam temporibus laboriosam!</h3>
 
+                
+
                 <h1>Heading</h1>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Cupiditate ullam blanditiis iste quasi est, voluptate, maiores illo quae dolores, quisquam molestias eum?
@@ -36,7 +35,11 @@ const Help = () => {
                 Corrupti nemo quas perferendis, alias commodi beatae eos at mollitia nihil, vero laboriosam veritatis magnam?
                 Fuga pariatur impedit consequatur deserunt labore maxime!
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel fugit expedita totam numquam accusantium necessitatibus sed voluptates, eaque laboriosam modi obcaecati at soluta, ab eius.
-                    Maxime excepturi ipsa soluta cumque!</h3>
+                    Maxime excepturi ipsa soluta cumque! Hic velit dolor omnis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos id ipsam rerum ullam debitis ratione est facilis tempore.
+                Autem voluptates ea, non impedit illo excepturi est possimus perferendis.
+                Obcaecati, repudiandae?  Quas sint facere quasi praesentium suscipit pariatur cupiditate blanditiis dicta modi dolore eligendi voluptas asperiores quibusdam quidem cumque sed,
+                 numquam temporibus laboriosam!</h3>
             </div>
         </div >
     )  

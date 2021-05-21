@@ -5,12 +5,38 @@ import axios from 'axios';
 import info from '../../assets/info.png'
 import close from '../../assets/close.png'
 import { USER_LOGIN, GET_CAPTCHA } from './../../constants'
+import {useHistory} from 'react-router-dom'
+import Profile from '../profile/profile'
+import { connect } from "react-redux";
+import {setEmail, setPassword, setCaptcha, setRememberMe} from './../../redux/actions/userActions'
 
-const Main = ({setAuthed}) => {
-    const [emailValue, setEmailValue] = useState('')
-    const [passwordValue, setPasswordValue] = useState('')
-    const [rememberMe, setRememberMe] = useState(false)
-    const [captchaValue, setCaptchaValue] = useState('')
+const mapStateToProps = state => {
+    return { 
+        email: state.allUsers.email, 
+        password: state.allUsers.password,
+        rememberMe: state.allUsers.rememberMe,
+        captcha: state.allUsers.captcha
+    };
+};
+
+
+const mapDispatchToProps = dispatch => {
+    return { 
+        changeEmail: value => dispatch(setEmail(value)),
+        changePassword: value => dispatch(setPassword(value)),
+        changeRememberMe : value => dispatch(setRememberMe(value)),
+        changeCaptcha: value=> dispatch(setCaptcha(value))
+    };
+};
+
+
+const Main = (props) => {
+    console.log('f', props.email)
+    console.log('f2', props.password)
+    console.log('f3', props.captcha)
+    console.log('f4', props.rememberMe)
+  
+    
 
     const [postRequest, setPostRequest] = useState([])
     const [captchaRequest, setCaptchaRequest] = useState([])
@@ -22,32 +48,20 @@ const Main = ({setAuthed}) => {
         getCaptchaData()
     }, [])
 
-    const handleEmailValue = (e) => {
-        setEmailValue(e.target.value)
-    }
+    
 
-    const handlePasswordValue = (e) => {
-        setPasswordValue(e.target.value)
-    }
-
-    const handleCaptchaValue = (e) => {
-        setCaptchaValue(e.target.value)
-    }
-
-    const handleRememberMe = () => {
-              setRememberMe(true)
-    }
+  
  
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(emailValue.length < 1){
-            setAlert('error email cannot be empty')
+        if(props.email.length < 1){
+            setAlert('Error! Email cannot be empty')
             setCloseMessage(true)
-        }else if(passwordValue.length < 4){
-            setAlert("Error password cannot be less from 4")
+        }else if(props.password.length < 4){
+            setAlert("Error! Password cannot be less from 4")
             setCloseMessage(true)
-        }else if (captchaValue.length < 1){
-            setAlert("Error captcha cannot be empty")
+        }else if (props.captcha.length < 1){
+            setAlert("Error! Captcha cannot be empty")
             setCloseMessage(true)
         }else {
             sendInfo()
@@ -59,22 +73,28 @@ const Main = ({setAuthed}) => {
         //sendInfo()
     }
 
+    let history = useHistory()
+
     // Send request email, password and captcha code with POST method 
     const sendInfo = async () => {
         let payload = {
-            email: emailValue,
-            password: passwordValue,
-            rememberMe: false, 
-            captcha: captchaValue
-        };console.log(payload);
+            email: props.email,
+            password: props.password,
+            rememberMe: props.rememberMe, 
+            captcha: props.captcha
+        };
+
         let res = await axios.post(USER_LOGIN, payload);
             if(res.data.messages){
-                setAlert(res.data.messages[0])
-                setRememberMe(true)
-                //4
+                setAlert(res.data.messages)
+                setCloseMessage(true)
+                
+                console.log(res.data.message);
             }
             console.log(res);
-            setAuthed(res.resultCode === 0 && true)
+            if(res.data.resultCode === 0){
+                history.push("/profile")
+            }
             }
 
         // Get captcha image with GET method
@@ -107,12 +127,12 @@ const Main = ({setAuthed}) => {
             
             <form onSubmit={handleSubmit} noValidate>
                <p>Email</p>
-               <input className="mainPageInput" onChange={handleEmailValue} type="email" name="email" id="email"/>
+               <input className="mainPageInput" value={props.email} onChange={e=> props.changeEmail(e.target.value)} type="email" name="email" id="email"/>
                <p>Password</p>
-               <input className="mainPageInput" onChange={handlePasswordValue} type="password" name="password" id="password"/>
+               <input className="mainPageInput" value={props.password} onChange={e=> props.changePassword(e.target.value)} type="password" name="password" id="password"/>
                
                 <div className='mainPageChechbox'>
-                    <input type="checkbox" onChange={handleRememberMe} name="checkbox" id="checkboxInput"/>
+                    <input type="checkbox" value={props.rememberMe} onChange={()=> props.changeRememberMe(!props.rememberMe)} name="checkbox" id="checkboxInput"/>
                     <p>Remember Me</p>
                 </div>
                 <div className='captcha'>
@@ -123,13 +143,15 @@ const Main = ({setAuthed}) => {
                        <div className='captchaReloadBtn' onClick={refreshBtn}><IoReloadCircleOutline /></div>
                     </div>
                     <div className='captchaInputContainer'>
-                    <input onChange={handleCaptchaValue} className='mainPageInput'  type="text" name="" id=""/>
+                    <input value={props.captcha} onChange={e => props.changeCaptcha(e.target.value)} className='mainPageInput'  type="text" name="" id=""/>
                     </div>
                 </div>
-                <button onClick={submit}>SIGN IN</button> 
+                <button className="submitBtn" onClick={submit}>SIGN IN</button> 
             </form>
         </div>
     )
 }
 
-export default Main
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Main);

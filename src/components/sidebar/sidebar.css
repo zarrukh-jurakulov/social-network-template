@@ -28,6 +28,10 @@
  
 }
 
+.pagesContainer a:focus {
+  color: blue;
+}
+
 .sidebarContext  {
     list-style-type: none;
     
@@ -66,6 +70,12 @@
     justify-content: space-evenly;
     flex-direction: column;
    
+  }
+
+  .modal-title {
+    width: 400px;
+    height: 200px;
+    background-color: blueviolet;
   }
   
   .modal-overlay {

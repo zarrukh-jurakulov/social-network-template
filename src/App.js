@@ -2,11 +2,12 @@ import React from 'react'
 import './App.css';
 import Sidebar from './components/sidebar/Sidebar'
 import Main from './components/main-page/Main'
+import Profile from './components/profile/profile'
 import Info from './components/info-page/Info'
 import  Help  from './components/help-page/Help'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 function App(props) {
-  const [authed, setAuthed] = React.useState(false)
+  
   const [visible, setVisible] = React.useState(false);
 
   function toggle() {
@@ -29,10 +30,16 @@ function App(props) {
   return (
     <div className="App">
       <BrowserRouter>
-        <Sidebar visible={visible} toggle={toggle} />
 
+      
+        <Sidebar visible={visible} toggle={toggle} />
         <Switch>
-          <Route exact path='/' render={() => authed ? <div className="profile"><h1>Your code is succesfully filled</h1></div> : <Main setAuthed={setAuthed} />} />
+          <Route exact path='/'>
+            <Main />
+          </Route>
+          <Route exact path='/profile'>
+            <Profile />
+          </Route>
           <Route path='/info'>
             <Info />
           </Route>
