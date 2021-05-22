@@ -1,5 +1,0 @@
-export const UserTypes =  {
-    SET_USER : "SET_USER",
-    SELECTED_USER : "SELECTED_USER",
-    REMOVE_SELECTED_USER : "REMOVE_SELECTED_USER"
-} 
